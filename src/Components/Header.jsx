@@ -1,12 +1,9 @@
 import React from 'react'
 import { LogoutBtn, Logo, Container } from './index'
-
 import { Link } from 'react-router-dom'
 import { UseSelector, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-
 function header() {
-
   const authStatus = useSelector((state) => state.auth.status)
   const navigate = useNavigate()
   const Navitems = [
@@ -58,7 +55,7 @@ function header() {
             {Navitems.map((item)=> 
 
             item.active ? (
-              <li key={item.name}>
+              <li key={item.name}>  
                 <button
                 onClick={()=> navigate(item.slug)}
                 className='inline-block py-6 px-4 duration-200 hover:bg-blue-200 rounded-full'
@@ -69,8 +66,17 @@ function header() {
             
             )}
 
-            {authStatus && ()}
+
+            {authStatus && (
+              <li>
+                <LogoutBtn/>
+              </li>
+            )}
+
+            
           </ul>
+
+
 
         </nav>
 
