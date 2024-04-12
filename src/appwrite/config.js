@@ -1,5 +1,4 @@
 import { conf } from '..conf.js'
-import { configureStore } from '@reduxjs/toolkit';
 import {Storage,Client,ID ,Databases,Query} from 'appwrite'
 
 
