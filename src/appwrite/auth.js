@@ -32,7 +32,8 @@ export class AuthService {
         try {
             return await this.account.createEmailSession(email, password);
         } catch (error) {
-            throw error;
+           
+            console.log("Appwrite Service :: Email,login" , error);
         }
     }
 
@@ -40,7 +41,7 @@ export class AuthService {
         try {
             return await this.account.get();
         } catch (error) {
-            console.log("Appwrite serive :: getCurrentUser :: error", error);
+            console.log("Appwrite serive :: getCurrentUser", error);
         }
 
         return null;
